@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusFix</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+
+<body>
+
+    <header>
+        <h1>CampusFix</h1>
+        <p>Campus Issue Management System</p>
+    </header>
+
+    <nav>
+        <button onclick="showStudent()">Student portal</button>
+        <button onclick="showAdmin()">Admin dashbord</button>
+    </nav>
+
+    <!-- STUDENT SECTION -->
+    <div id="student">
+
+        <h2>Report a Campus Issue</h2>
+
+        <form onsubmit="submitIssue(event)">
+
+            <label for="title">Issue Title :</label>
+            <input type="text" id="title"
+                   placeholder="Example: Broken Light" required>
+
+            <label for="category">Category :</label>
+            <select id="category">
+                <option>Electrical</option>
+                <option>Wi-Fi</option>
+                <option>Water</option>
+                <option>Hostel</option>
+                <option>Sanitation</option>
+                <option>Other</option>
+            </select>
+
+            <label for="location">Location :</label>
+            <input type="text" id="location"
+                   placeholder="Example: CS Block" required>
+
+            <label for="priority">Priority :</label>
+            <select id="priority">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <label for="file1">Upload File :</label>
+            <input type="file" id="file1">
+
+            <label for="description">Description</label>
+            <textarea id="description"
+                      placeholder="Describe the problem"
+                      required></textarea>
+
+            <button type="submit">Submit Issue</button>
+
+        </form>
+
+        <h2>My Complaints</h2>
+
+        <div id="complaints">
+            <p>No complaints yet.</p>
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN SECTION -->
+
+    <div id="admin">
+
+        <h2>Admin Dashboard</h2>
+
+        <p>Total Issues: <span id="total">0</span></p>
+        <p>Pending Issues: <span id="pending">0</span></p>
+        <p>Resolved Issues: <span id="resolved">0</span></p>
+
+        <div id="adminComplaints">
+            <p>No complaints available.</p>
+        </div>
+
+    </div>
+
+   
+
+    <div id="adminLogin">
+
+    <h2>Admin Login</h2>
+
+    <input type="text" id="adminUsername" placeholder="Username"> <input
+        type="password"
+        id="adminPassword"
+        placeholder="Password"
+    >
+
+    <button onclick="adminLogin()">
+        Login
+    </button>
+
+</div>
+
+<script src ="script.js"> </script>
+</body>
+</html>
